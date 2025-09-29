@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Course Materials</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f9f9f9;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #007bff;
+      color: white;
+      font-size: 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <a id="accessBtn" class="btn" target="_blank">Access Course Materials</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const department = urlParams.get('department');
+    const level = urlParams.get('level');
+    const semester = urlParams.get('semester');
+
+    // Add your real Google Drive links here
+    const driveLinks = {
+      electrical: {
+        100: {
+          1: "https://drive.google.com/drive/folders/10Xny29jxD8QQbjRLyqm555UwxUcCWJed",
+          2: "https://drive.google.com/drive/folders/143OMI8CMDkEupGx15X75AL-8dlv_ToVS"
+        }
+      },
+      computer: {
+        100: {
+          1: "https://drive.google.com/drive/folders/COMP-100L-SEM1",
+          2: "https://drive.google.com/drive/folders/COMP-100L-SEM2"
+        }
+      }
+    };
+
+    const accessBtn = document.getElementById('accessBtn');
+
+    if (driveLinks[department] && driveLinks[department][level] && driveLinks[department][level][semester]) {
+      accessBtn.href = driveLinks[department][level][semester];
+    } else {
+      accessBtn.href = "#";
+      accessBtn.textContent = "No Course Materials Available";
+      accessBtn.style.background = "gray";
+      accessBtn.style.cursor = "not-allowed";
+    }
+  </script>
+</body>
+</html>

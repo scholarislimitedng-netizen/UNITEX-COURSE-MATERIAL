@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNITEX Course Portal</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>UNITEX Course Materials(UNIUYO Engr. STUDENT ONLY)</h1>
+    <p class="marquee">Explore your course materials easily. More departments and courses coming soon!
+Disclaimer:
+The Uniuyo CBT Practice platform is designed solely for educational purposes. The content provided is intended to help students prepare for exams and practice their knowledge. This platform is not officially affiliated with or endorsed by the University of Uyo. While we strive to provide accurate and up-to-date information, we do not guarantee the correctness or completeness of the materials. Users are responsible for their own learning outcomes and any decisions made based on the content of this platform. By using this platform, you agree that the administrators are not liable for any direct or indirect consequences arising from its use. </p>
+
+    <form id="courseForm" action="view_courses.html" method="GET">
+      <label for="department">Select Department:</label>
+      <select name="department" id="department" required>
+        <option value="">--Select Department--</option>
+        <option value="electrical">Electrical Engineering</option>
+    <option value="mechanical">Mechanical Engineering</option>
+
+      </select>
+
+      <label for="level">Select Level:</label>
+      <select name="level" id="level" required>
+        <option value="">--Select Level--</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+
+      </select>
+
+      <label for="semester">Select Semester:</label>
+      <select name="semester" id="semester" required>
+        <option value="">--Select Semester--</option>
+        <option value="1">1st Semester</option>
+        <option value="2">2nd Semester</option>
+      </select>
+
+      <button type="submit" class="btn-submit">Access Courses</button>
+    </form>
+
+    <p class="notice">If your department is not listed, more will be uploaded soon. Sorry for any inconvenience.</p>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
